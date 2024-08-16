@@ -1,0 +1,464 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:elements="clr-namespace:FlatDesignApp.Elements">
+
+    <!-- Start: General Style -->
+    <Style x:Key="GeneralDarkButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="Width" Value="231"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Foreground" Value="{StaticResource FlatButtonForegroundColor}"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Name="bd" CornerRadius="2" Background="{TemplateBinding Background}" BorderThickness="0.7" BorderBrush="{StaticResource FlatButtonBorderColor}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="contentPresenter"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource FlatButtonAltBackgroundColor}"/>
+                            <Setter Property="Foreground" Value="{StaticResource FlatButtonAltForegroundColor}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style  x:Key="GeneralAltDarkButtonStyle" TargetType="Button" BasedOn="{StaticResource GeneralDarkButtonStyle}">
+        <Setter Property="Background" Value="{StaticResource FlatButtonForegroundColor}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Name="bd" CornerRadius="3" Background="{TemplateBinding Background}" BorderThickness="0.7" BorderBrush="{StaticResource FlatButtonBorderColor}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="contentPresenter"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource FlatButtonAltBackgroundColor}"/>
+                            <Setter Property="Foreground" Value="{StaticResource FlatButtonAltForegroundColor}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="WindowToolBarButtonStyle" TargetType="Button" BasedOn="{StaticResource GeneralDarkButtonStyle}">
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Margin" Value="2"/>
+        <Setter Property="Width" Value="30"/>
+        <Setter Property="FontSize" Value="17"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Name="bd" CornerRadius="2" Background="{TemplateBinding Background}" BorderThickness="0">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="contentPresenter"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource FlatButtonAltBackgroundColor}"/>
+                            <Setter Property="Foreground" Value="{StaticResource FlatButtonAltForegroundColor}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="LoginWindowToolBarButtonStyle" TargetType="Button" BasedOn="{StaticResource WindowToolBarButtonStyle}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Name="bd" CornerRadius="2" Background="{TemplateBinding Background}" BorderThickness="0">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="contentPresenter"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource LoginWindowWindowButtonAltColor}"/>
+                            <Setter Property="Foreground" Value="{StaticResource FlatButtonAltForegroundColor}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="PopupWindowToolBarButtonStyle" TargetType="Button" BasedOn="{StaticResource WindowToolBarButtonStyle}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Name="bd" CornerRadius="2" Background="{TemplateBinding Background}" BorderThickness="0">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="contentPresenter"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{StaticResource PopupWindowWindowButtonColor}"/>
+                            <Setter Property="Foreground" Value="{StaticResource FlatButtonAltForegroundColor}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="WindowToolBarStackPanel" TargetType="StackPanel">
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="Orientation" Value="Horizontal"/>
+        <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+    </Style>
+    <!-- End: General Style -->
+
+    <Style x:Key="MenuButtonStyle" TargetType="Button" BasedOn="{StaticResource GeneralDarkButtonStyle}">
+        <Setter Property="Margin" Value="0 0 0 5"/>
+    </Style>
+
+    <!-- Start: ViewPage Style -->
+    <!-- Start: ComboBox -->
+    <Style x:Key="ComboboxTextBoxStyle" TargetType="{x:Type TextBox}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Grid>
+                        <Border Background="{StaticResource ViewPageComboBoxFullBackgroundColor}" CornerRadius="2 0 0 2" 
+                                BorderThickness="0" BorderBrush="{StaticResource ViewPageComboBoxBackgroundColor}">
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ComboboxButtonStyle" TargetType="{x:Type ToggleButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Border x:Name="border" Background="{StaticResource ViewPageComboBoxBackgroundColor}" 
+                            CornerRadius="0 0 2 0" BorderThickness="0" BorderBrush="{StaticResource ViewPageComboBoxBorderBrushColor}">
+                        <ContentPresenter />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="EditComboboxTextBoxStyle" TargetType="{x:Type TextBox}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Grid>
+                        <Border Background="Transparent" CornerRadius="0 0 0 2" 
+                    BorderThickness="1 0 1 1" BorderBrush="{StaticResource ViewPageComboBoxBackgroundColor}">
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ComboboxStyle" TargetType="{x:Type ComboBox}">
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="Foreground" Value="{StaticResource EditPageComboBoxTextColor}"/>
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ComboBox}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition MaxWidth="18"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Name="PART_EditableTextBox" Style="{StaticResource EditComboboxTextBoxStyle}" Padding="9 3 0 0" Height="{TemplateBinding Height}"/>
+
+                        <ToggleButton Cursor="Hand" Grid.Column="1" Height="{TemplateBinding Height}" Style="{StaticResource ComboboxButtonStyle}" Focusable="False" 
+                                              IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" ClickMode="Press">
+                            <Path Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Data="M 0 0 L 4 4 L 8 0 Z" Fill="{StaticResource ViewPageComboBoxForegroundColor}"/>
+                        </ToggleButton>
+                        <!-- Label -->
+                        <ContentPresenter Name="ContentSite" Content="{TemplateBinding SelectionBoxItem}" ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" 
+                                                  ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0"/>
+                        <!-- Panel -->
+                        <Popup Name="Popup" Placement="Bottom" IsOpen="{TemplateBinding IsDropDownOpen}" AllowsTransparency="True" Focusable="True" PopupAnimation="Slide">
+                            <Grid Name="DropDown" SnapsToDevicePixels="True" MinWidth="{TemplateBinding ActualWidth}" MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                <Border x:Name="DropDownBorder"  Background="{StaticResource EditPageComboBoxPopupMenuBackgroundColor}" BorderThickness="2" CornerRadius="0 0 3 3"/>
+                                <ScrollViewer MaxHeight="140" Margin="4 6 4 6" SnapsToDevicePixels="True">
+                                    <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
+                                </ScrollViewer>
+                            </Grid>
+                        </Popup>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Start: ComboBoxHeaderLabel -->
+    <Style TargetType="Label" x:Key="ComboBoxHeaderLabel">
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="{StaticResource ComboBoxHeaderLabelForegroundColor}"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Label}">
+                    <Border Name="bd" CornerRadius="2 2 0 0" BorderThickness="1"
+                            BorderBrush="{StaticResource ViewPageComboBoxBackgroundColor}" Background="{StaticResource ViewPageComboBoxForegroundColor}">
+                        <ContentPresenter HorizontalAlignment="Left" Margin="10 3 0 3" VerticalAlignment="Center" x:Name="contentPresenter"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!-- End: ComboBoxHeaderLabel -->
+
+    <!-- Start: ComboBoxAddButton -->
+    <Style TargetType="Button" x:Key="ComboBoxAddButton" BasedOn="{StaticResource GeneralDarkButtonStyle}">
+        <Setter Property="Width" Value="30"/>
+        <Setter Property="Height" Value="56"/>
+        <Setter Property="Content" Value="+"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Name="bd" Background="{StaticResource ViewPageComboBoxBackgroundColor}" CornerRadius="0 5 5 0" BorderThickness="0">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="contentPresenter"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!-- End: ComboBoxAddButton -->
+
+    <Style TargetType="StackPanel" x:Key="ComboBoxSubPanel">
+        <Setter Property="Width" Value="230"/>
+        <Setter Property="Margin" Value="0 0 0 3"/>
+    </Style>
+    <!-- End: ComboBox -->
+
+    <Style TargetType="DataGrid">
+        <Setter Property="RowBackground" Value="{StaticResource DarkDataGridRowBackgroundColor}"/>
+        <Setter Property="Control.Background" Value ="{StaticResource DarkDataGridControlBackgroundColor}"/>
+        <Setter Property="Control.Visibility" Value ="Visible"/>
+        <Setter Property="Control.Foreground" Value ="{StaticResource DarkDataGridControlForegroundColor}"/>
+        <Setter Property="AutoGenerateColumns" Value ="False"/>
+        <Setter Property="Control.HorizontalAlignment" Value ="Stretch"/>
+        <Setter Property="Control.VerticalAlignment" Value ="Stretch"/>
+        <Setter Property="Control.BorderBrush" Value ="Transparent"/>
+        <Setter Property="RowHeaderWidth" Value ="0"/>
+        <Setter Property="VerticalGridLinesBrush" Value="{StaticResource DarkDataGridVerticalGridLinesBrushdColor}"/>
+        <Setter Property="HorizontalGridLinesBrush" Value="{StaticResource DarkDataGridHorizontalGridLinesBrushColor}"/>
+        <Setter Property="CanUserAddRows" Value="False"/>
+        <Setter Property="CanUserDeleteRows" Value="False"/>
+        <Setter Property="CanUserReorderColumns" Value="False"/>
+        <Setter Property="IsReadOnly" Value="True"/>
+    </Style>
+
+    <Style TargetType="DataGridColumnHeader">
+        <Setter Property="Background" Value="{StaticResource DarkDataGridColumnHeaderBackground}" />
+        <Setter Property="Foreground" Value="{StaticResource DarkDataGridColumnHeaderForeground}"/>
+        <Setter Property="Padding" Value="3"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+
+    <Style x:Key="ViewPageTopMenuStackPanel" TargetType="StackPanel">
+        <Setter Property="Orientation" Value="Horizontal"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="0 0 10 0"/>
+    </Style>
+
+    <Style x:Key="ViewPageTopMenuComboBox" TargetType="ComboBox" BasedOn="{StaticResource ComboboxStyle}">
+        <Setter Property="Width" Value="200"/>
+        <Setter Property="Foreground" Value="{StaticResource ViewPageComboBoxTextColor}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Margin" Value="0 0 3 0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ComboBox}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition MaxWidth="18"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox Name="PART_EditableTextBox" Style="{StaticResource ComboboxTextBoxStyle}" Padding="9 3 0 0" Height="{TemplateBinding Height}"/>
+
+                        <ToggleButton Cursor="Hand" Grid.Column="1" Height="{TemplateBinding Height}" Style="{StaticResource ComboboxButtonStyle}" Focusable="False" 
+                                  IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" ClickMode="Press">
+                            <Path Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Data="M 0 0 L 4 4 L 8 0 Z" Fill="{StaticResource ViewPageComboBoxForegroundColor}"/>
+                        </ToggleButton>
+                        <!-- Label -->
+                        <ContentPresenter Name="ContentSite" Content="{TemplateBinding SelectionBoxItem}" ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" 
+                                      ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0"/>
+                        <!-- Panel -->
+                        <Popup Name="Popup" Placement="Bottom" IsOpen="{TemplateBinding IsDropDownOpen}" AllowsTransparency="True" Focusable="True" PopupAnimation="Slide">
+                            <Grid Name="DropDown" SnapsToDevicePixels="True" MinWidth="{TemplateBinding ActualWidth}" MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                <Border x:Name="DropDownBorder"  Background="{StaticResource ViewPageComboBoxPopupMenuBackgroundColor}" BorderThickness="2" CornerRadius="0 0 3 3"/>
+                                <ScrollViewer MaxHeight="140" Margin="4 6 4 6" SnapsToDevicePixels="True">
+                                    <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
+                                </ScrollViewer>
+                            </Grid>
+                        </Popup>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ViewPageTopMenuButton" TargetType="Button" BasedOn="{StaticResource GeneralDarkButtonStyle}">
+        <Setter Property="Content" Value="+"/>
+        <Setter Property="Width" Value="35"/>
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Background" Value="{StaticResource ViewPageTopMenuButtonBackgroundColor}"/>
+        <Setter Property="Foreground" Value="{StaticResource ViewPageTopMenuButtonForegroundColor}"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="ToolTip" Value="Add item"/>
+    </Style>
+
+    <Style x:Key="ViewPageTopMenuTextBox" TargetType="{x:Type TextBox}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Grid>
+                        <Border Background="{StaticResource ViewPageComboBoxBackgroundColor}" 
+                                CornerRadius="3" BorderThickness="0" BorderBrush="{StaticResource ViewPageComboBoxBorderBrushColor}">
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Width" Value="200"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Margin" Value="0 0 3 0"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="15 0 0 0"/>
+    </Style>
+
+    <Style TargetType="Button" x:Key="IconButtonStyle">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border  Background="Transparent" Cursor="Hand" x:Name="AddUpBorder" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" CornerRadius="10">
+                        <Path Stretch="Uniform" Data="{TemplateBinding Content}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="12" Width="20">
+                            <Path.Style>
+                                <Style TargetType="Path">
+                                    <Setter Property="Fill" Value="White"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementName=AddUpBorder, Path=IsMouseOver}" Value="True">
+                                            <Setter Property="Fill" Value="Wheat" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Path.Style>
+                        </Path>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ViewPageDataGridDeleteButtonStyle" TargetType="Button" BasedOn="{StaticResource IconButtonStyle}">
+        <Setter Property="ToolTip" Value="Delete"/>
+        <Setter Property="Content" Value="{DynamicResource delete}"/>
+    </Style>
+
+    <Style x:Key="ViewPageDataGridEditButtonStyle" TargetType="Button" BasedOn="{StaticResource IconButtonStyle}">
+        <Setter Property="ToolTip" Value="Edit"/>
+        <Setter Property="Content" Value="{DynamicResource edit}"/>
+    </Style>
+
+    <Style x:Key="ViewPageTitle" TargetType="Label">
+        <Setter Property="Foreground" Value="{StaticResource PageTitleColor}"/>
+        <Setter Property="FontSize" Value="23"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+
+    <!-- End: ViewPage Style -->
+
+
+    <!-- Start: EditPage Style -->
+    <Style x:Key="EditPageStackPanelStyle" TargetType="StackPanel">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Width" Value="231"/>
+    </Style>
+
+    <Style x:Key="EditPageConfirmButton" BasedOn="{StaticResource GeneralAltDarkButtonStyle}" TargetType="Button">
+        <Setter Property="Margin" Value="0 0 0 3"/>
+        <Setter Property="Content" Value="Save"/>
+        <Setter Property="Background" Value="#F28705"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+
+    <Style x:Key="EditPageCancelButton" BasedOn="{StaticResource GeneralDarkButtonStyle}" TargetType="Button">
+        <Setter Property="Content" Value="Clear"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+
+    <Style x:Key="EditPagePlaceholderTextBoxStyle" TargetType="{x:Type elements:PlaceholderTextBox}">
+        <Setter Property="Margin" Value="0 0 0 3"/>
+    </Style>
+
+    <Style x:Key="EditPageStyle" TargetType="Page">
+        <Style.Resources>
+            <Style TargetType="StackPanel" BasedOn="{StaticResource EditPageStackPanelStyle}"/>
+            <Style TargetType="{x:Type elements:PlaceholderTextBox}" BasedOn="{StaticResource EditPagePlaceholderTextBoxStyle}"/>
+            <Style TargetType="Button" BasedOn="{StaticResource EditPageConfirmButton}"/>
+            <Style TargetType="ComboBox" BasedOn="{StaticResource ComboboxStyle}"/>
+        </Style.Resources>
+    </Style>
+    <!-- End: EditPage Style -->
+
+    <Style x:Key="MainTextBox" TargetType="{x:Type TextBox}">
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="TextWrapping" Value="NoWrap"/>
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="SelectionBrush" Value="{StaticResource LoginPageForegroundColor}"/>
+        <Setter Property="CaretBrush" Value="{StaticResource LoginPageForegroundColor}"/>
+    </Style>
+
+    <!-- Start: LoginPage -->
+    <Style x:Key="LoginPasswordBoxStlye" TargetType="PasswordBox">
+        <Setter Property="Background" Value="{x:Null}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="SelectionBrush" Value="{StaticResource LoginPageForegroundColor}"/>
+        <Setter Property="CaretBrush" Value="{StaticResource LoginPageForegroundColor}"/>
+    </Style>
+
+    <Style x:Key="LoginPageButtonStyle" TargetType="Button">
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="Width" Value="115"/>
+        <Setter Property="Foreground" Value="{StaticResource LoginPageForegroundColor}"/>
+        <Setter Property="Height" Value="33"/>
+        <Setter Property="Background" Value="{x:Null}"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border CornerRadius="2" Background="{StaticResource LoginPageLoginButtonColor}" Cursor="Hand" BorderThickness="0" BorderBrush="{StaticResource LoginPageForegroundColor}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!-- End: LoginPage -->
+
+</ResourceDictionary>

@@ -1,0 +1,86 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Start: DataGrid -->
+    <SolidColorBrush x:Key="DarkDataGridRowBackgroundColor" Color="#382C40"/>
+    <SolidColorBrush x:Key="DarkDataGridControlBackgroundColor" Color="#382C40"/>
+    <SolidColorBrush x:Key="DarkDataGridControlForegroundColor" Color="White"/>
+    <SolidColorBrush x:Key="DarkDataGridVerticalGridLinesBrushdColor" Color="#382C40"/>
+    <SolidColorBrush x:Key="DarkDataGridHorizontalGridLinesBrushColor" Color="#382C40"/>
+    <SolidColorBrush x:Key="DarkDataGridColumnHeaderBackground" Color="#F28705"/>
+    <SolidColorBrush x:Key="DarkDataGridColumnHeaderForeground" Color="#231B26"/>
+    <!-- End: DataGrid -->
+
+    <!-- Start: Button -->
+    <SolidColorBrush x:Key="FlatButtonForegroundColor" Color="#EAE9F2"/>
+    <SolidColorBrush x:Key="FlatButtonAltForegroundColor" Color="Black"/>
+    <SolidColorBrush x:Key="FlatButtonBorderColor" Color="#C5C6D9"/>
+    <SolidColorBrush x:Key="FlatButtonAltBackgroundColor" Color="#C5C6D9"/>
+    <!-- End: Button -->
+
+    <!-- Start: Grid -->
+    <SolidColorBrush x:Key="DarkMenuWindowGridColor" Color="#231B26"/>
+    <!-- End: Grid -->
+
+    <SolidColorBrush x:Key="EmptyPageIconColor" Color="#EAE9F2"/>
+
+    <SolidColorBrush x:Key="ViewPageComboBoxTextColor" Color="#231A1D"/>
+    <SolidColorBrush x:Key="ViewPageComboBoxForegroundColor" Color="#231A1D"/>
+    <SolidColorBrush x:Key="ViewPageComboBoxBorderBrushColor" Color="#231A1D"/>
+    <SolidColorBrush x:Key="ViewPageComboBoxBackgroundColor" Color="#EAE9F2"/>
+    <SolidColorBrush x:Key="ViewPageComboBoxFullBackgroundColor" Color="#EAE9F2"/>
+    <SolidColorBrush x:Key="ViewPageComboBoxPopupMenuBackgroundColor" Color="#EAE9F2"/>
+
+    <SolidColorBrush x:Key="ViewPageTopMenuButtonBackgroundColor" Color="#EAE9F2"/>
+    <SolidColorBrush x:Key="ViewPageTopMenuButtonForegroundColor" Color="Black"/>
+
+    <SolidColorBrush x:Key="EditPageComboBoxTextColor" Color="#EAE9F2"/>
+    <SolidColorBrush x:Key="EditPageComboBoxPopupMenuBackgroundColor" Color="#231A1D"/>
+
+    <SolidColorBrush x:Key="WindowMainBackgroundColor" Color="#382C40"/>
+
+    <!-- Start: PlaceholderTextBox -->
+    <SolidColorBrush x:Key="PlaceholderTextBoxBackground" Color="#231A1D"/>
+    <SolidColorBrush x:Key="PlaceholderTextBoxForeground" Color="#EAE9F2"/>
+    <SolidColorBrush x:Key="PlaceholderTextBoxLabelColor" Color="#F28705"/>
+    <!-- End: PlaceholderTextBox -->
+
+    <!-- Start: PlaceholderLoginBox -->
+    <SolidColorBrush x:Key="PlaceholderLoginBoxBackground" Color="#231A1D"/>
+    <SolidColorBrush x:Key="PlaceholderLoginBoxForeground" Color="Wheat"/>
+    <SolidColorBrush x:Key="PlaceholderLoginBoxLabelColor" Color="Wheat"/>
+    <!-- End: PlaceholderLoginBox -->
+
+    <!-- Start: LoginWindow -->
+    <SolidColorBrush x:Key="LoginPageBackgroundColor" Color="#2C302C"/>
+    <SolidColorBrush x:Key="LoginPageForegroundColor" Color="Wheat"/>
+    <SolidColorBrush x:Key="LoginPageLoginButtonColor" Color="#D93D04"/>
+    <SolidColorBrush x:Key="LoginPageAccentTextColor" Color="#F2E63D"/>
+
+    <SolidColorBrush x:Key="LoginWindowWindowButtonAltColor" Color="#F2E63D"/>
+    <!-- End: LoginWindow -->
+
+    <!-- Start: MainWindow -->
+    <SolidColorBrush x:Key="TopPanelBackgroundColor" Color="#231B26"/>
+    <SolidColorBrush x:Key="TopPanelForegroundColor" Color="#EAE9F2"/>
+    <!-- End: MainWindow -->
+
+    <!-- Start: PageCommon -->
+    <SolidColorBrush x:Key="PageTitleColor" Color="#F28705" />
+    <!-- End: PageCommon -->
+
+    <!-- Start: PopupWindow -->
+    <SolidColorBrush x:Key="PopupWindowBackgroundColor" Color="#F28705"/>
+    <SolidColorBrush x:Key="PopupWindowTopBackgroundColor" Color="#F28705"/>
+    <SolidColorBrush x:Key="PopupWindowTopForegroundColor" Color="White"/>
+    <SolidColorBrush x:Key="PopupWindowContentBackgroundColor" Color="#231B26"/>
+
+    <SolidColorBrush x:Key="PopupWindowWindowButtonColor" Color="White"/>
+    <!-- End: PopupWindow -->
+
+    <!-- Start: EditPage -->
+    <SolidColorBrush x:Key="ComboBoxHeaderLabelForegroundColor" Color="#F28705"/>
+    <SolidColorBrush x:Key="ComboBoxHeaderLabelBackgroundColor" Color="#EAE9F2"/>
+    <!-- End: EditPage -->
+
+</ResourceDictionary>

@@ -1,0 +1,71 @@
+﻿<Page x:Class="FlatDesignApp.Pages.ViewPages.GeoDataViewPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FlatDesignApp.Pages.ViewPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="GeoDataViewPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Cities" Style="{StaticResource ViewPageTitle}"/>
+
+        <StackPanel Grid.Row="1" Style="{StaticResource ViewPageTopMenuStackPanel}">
+            <TextBox x:Name="searchBoxCity" TextChanged="SearchCityBoxTextChanged" Style="{StaticResource ViewPageTopMenuTextBox}"/>
+            <Button Click="AddCityButtonClick" Style="{StaticResource ViewPageTopMenuButton}"/>
+        </StackPanel>
+
+        <DataGrid x:Name="dgCity" Grid.Row="2" Margin="0 3 0 0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="id" Binding="{Binding Id}"/>
+                <DataGridTextColumn Width="*" Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn Width="*" Header="Country" Binding="{Binding Country.Name}"/>
+                <DataGridTemplateColumn Header="Functions">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Click="DeleteCityButtonClick" Style="{DynamicResource ViewPageDataGridDeleteButtonStyle}"/>
+                                <Button Click="EditCityButtonClick" Style="{DynamicResource ViewPageDataGridEditButtonStyle}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Label Content="Countries" Grid.Column="1" Style="{StaticResource ViewPageTitle}"/>
+        <StackPanel Grid.Row="1" Grid.Column="1" Style="{StaticResource ViewPageTopMenuStackPanel}">
+            <TextBox x:Name="searchBoxCountry" TextChanged="SearchCountryBoxTextChanged" Style="{StaticResource ViewPageTopMenuTextBox}"/>
+            <Button Click="AddCountryButtonClick" Style="{StaticResource ViewPageTopMenuButton}"/>
+        </StackPanel>
+
+        <DataGrid x:Name="dgCountry" Grid.Row="2" Grid.Column="1" Margin="0 3 0 0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="id" Binding="{Binding Id}"/>
+                <DataGridTextColumn Width="*" Header="Name" Binding="{Binding Name}"/>
+                <DataGridTemplateColumn Header="Functions">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Click="DeleteCountryButtonClick" Style="{DynamicResource ViewPageDataGridDeleteButtonStyle}"/>
+                                <Button Click="EditCountryButtonClick" Style="{DynamicResource ViewPageDataGridEditButtonStyle}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

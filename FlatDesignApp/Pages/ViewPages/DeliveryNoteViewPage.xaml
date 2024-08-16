@@ -1,0 +1,44 @@
+﻿<Page x:Class="FlatDesignApp.Pages.ViewPages.DeliveryNoteViewPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FlatDesignApp.Pages.ViewPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="DeliveryNoteViewPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Delivery Notes" Style="{StaticResource ViewPageTitle}"/>
+
+        <StackPanel Grid.Row="1" Style="{StaticResource ViewPageTopMenuStackPanel}">
+            <TextBox x:Name="searchBox" TextChanged="SearchBoxTextChanged" Style="{StaticResource ViewPageTopMenuTextBox}"/>
+            <Button Click="AddButtonClick" Style="{StaticResource ViewPageTopMenuButton}"/>
+        </StackPanel>
+
+        <DataGrid x:Name="dgDeliveryNote" Grid.Row="2" Margin="0 3 0 0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="*" Header="Client" Binding="{Binding Client.Name}"/>
+                <DataGridTextColumn Width="*" Header="Phone number" Binding="{Binding PhoneNumber}"/>
+                <DataGridTextColumn Width="*" Header="Price" Binding="{Binding Price}"/>
+                <DataGridTextColumn Width="*" Header="Address" Binding="{Binding Address.DisplayName}"/>
+                <DataGridTextColumn Width="*" Header="Product" Binding="{Binding Product.Name}"/>
+                <DataGridTemplateColumn Header="Functions">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Click="DeleteButtonClick" Style="{DynamicResource ViewPageDataGridDeleteButtonStyle}"/>
+                                <Button Click="EditButtonClick" Style="{DynamicResource ViewPageDataGridEditButtonStyle}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

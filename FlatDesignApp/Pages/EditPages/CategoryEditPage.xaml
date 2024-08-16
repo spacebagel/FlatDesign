@@ -1,0 +1,19 @@
+﻿<Page x:Class="FlatDesignApp.Pages.EditPages.CategoryEditPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FlatDesignApp.Pages.EditPages"
+      xmlns:elements="clr-namespace:FlatDesignApp.Elements"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Edit Category" x:Name="eCategoryPage" Style="{StaticResource EditPageStyle}">
+
+    <Grid>
+        <StackPanel>
+            <elements:PlaceholderTextBox x:Name="tbCategoryName" Title="Category name" Text="{Binding ElementName=eCategoryPage, Path=EditCategory.Name}"/>
+            <Button Click="SaveButtonClick"/>
+            <Button Style="{StaticResource EditPageCancelButton}" Click="CancelButtonClick"/>
+        </StackPanel>
+    </Grid>
+</Page>

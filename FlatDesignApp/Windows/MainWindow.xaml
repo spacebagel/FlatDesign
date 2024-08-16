@@ -1,0 +1,54 @@
+﻿<Window x:Class="FlatDesignApp.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FlatDesignApp.Windows"
+        mc:Ignorable="d"
+        Title="Delivery accounting" Height="500" Width="800" Icon="/Pictures/sea.png" 
+        FontFamily="Dubai" FontSize="16" Foreground="White" Background="Transparent"
+        WindowStartupLocation="CenterScreen" AllowsTransparency="True" WindowStyle="None" 
+        ShowInTaskbar="True">
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="38"/>
+    </WindowChrome.WindowChrome>
+    <Grid Background="{StaticResource WindowMainBackgroundColor}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="280"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.ColumnSpan="2" VerticalAlignment="Top" Background="{StaticResource TopPanelBackgroundColor}">
+            <Label Content="📃 Delivery accounting" Foreground="{StaticResource TopPanelForegroundColor}" Margin="15 0 0 0" VerticalAlignment="Center"/>
+            <StackPanel Style="{StaticResource WindowToolBarStackPanel}">
+                <Button Content="-" Style="{StaticResource WindowToolBarButtonStyle}" x:Name="btnMin"/>
+                <Button Content="□" Style="{StaticResource WindowToolBarButtonStyle}" x:Name="btnMax"/>
+                <Button Content="x" Style="{StaticResource WindowToolBarButtonStyle}" x:Name="btnExit"/>
+            </StackPanel>
+        </Grid>
+        <Border CornerRadius="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" Grid.Row="1" Background="{StaticResource DarkMenuWindowGridColor}">
+            <StackPanel Margin="0,15,0,0" HorizontalAlignment="Center">
+                <Rectangle HorizontalAlignment="Left" Height="131" VerticalAlignment="Top" Margin="0 0 0 15" Width="231" SnapsToDevicePixels="True" RadiusX="5" RadiusY="5">
+                    <Rectangle.Fill>
+                        <ImageBrush Stretch="UniformToFill" ImageSource="/Pictures/menu_img.jpg"/>
+                    </Rectangle.Fill>
+                </Rectangle>
+
+                <Button Content="Addresses" Click="AddressButtonClick" Style="{StaticResource MenuButtonStyle}"/>
+                <Button Content="Banks" Click="BankClick" Style="{StaticResource MenuButtonStyle}"/>
+                <Button Content="Bank Details" Click="BankDetailClick" Style="{StaticResource MenuButtonStyle}"/>
+                <Button Content="Categories" Click="CategoryButtonClick" Style="{StaticResource MenuButtonStyle}"/>
+                <Button Content="Clients" Click="ClientButtonClick" Style="{StaticResource MenuButtonStyle}"/>
+                <Button Content="Delivery Notes" Click="DeliveryNoteButtonClick" Style="{StaticResource MenuButtonStyle}"/>
+                <Button Content="Geo Data" Click="GeoDataButtonClick" Style="{StaticResource MenuButtonStyle}"/>
+                <Button Content="Products" Click="ProductButtonClick" Style="{StaticResource MenuButtonStyle}"/>
+            </StackPanel>
+        </Border>
+        <Border CornerRadius="4" HorizontalAlignment="Stretch" Grid.Column="1" Margin="0 10 10 10" Grid.Row="1" Background="{StaticResource DarkMenuWindowGridColor}">
+            <Frame Margin="10" x:Name="fPageNavigator" NavigationUIVisibility="Hidden" />
+        </Border>
+    </Grid>
+</Window>

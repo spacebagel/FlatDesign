@@ -1,0 +1,38 @@
+﻿<Window x:Class="FlatDesignApp.Windows.PopupWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FlatDesignApp.Windows"
+        mc:Ignorable="d"
+        Title="Edit Page" Height="550" Width="450" 
+        MinHeight="550" MinWidth="400" FontFamily="Dubai" 
+        FontSize="16" Foreground="White" 
+        WindowStartupLocation="Manual" 
+        Background="{StaticResource PopupWindowBackgroundColor}" 
+        AllowsTransparency="True" WindowStyle="None" Icon="/Pictures/sea.png">
+    
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="38"/>
+    </WindowChrome.WindowChrome>
+
+    <Border BorderThickness="2" BorderBrush="#231A1D">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid VerticalAlignment="Top" Background="{StaticResource PopupWindowTopBackgroundColor}">
+                <Label Content="📝 Edit Page" Foreground="{StaticResource PopupWindowTopForegroundColor}" Margin="15 0 0 0" VerticalAlignment="Center"/>
+                <StackPanel Style="{StaticResource WindowToolBarStackPanel}">
+                    <Button Content="-" Style="{StaticResource PopupWindowToolBarButtonStyle}" x:Name="btnMin"/>
+                    <Button Content="□" Style="{StaticResource PopupWindowToolBarButtonStyle}" x:Name="btnMax"/>
+                    <Button Content="x" Style="{StaticResource PopupWindowToolBarButtonStyle}" x:Name="btnExit"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="1" Background="{StaticResource PopupWindowContentBackgroundColor}" Margin="10" MouseDown="Grid_MouseDown">
+                <Frame x:Name="PopupPagesNavigation"  NavigationUIVisibility="Hidden"/>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
